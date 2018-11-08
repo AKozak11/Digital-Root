@@ -1,17 +1,17 @@
 public class DRoot {
 
   //recursive
-  
-  public static int digital_root(int n) {
-    int total = 0;
-    String str = Integer.toString(n);
-    String[] arr = str.split("");
 
-      for(String el : arr){
-        total += Integer.parseInt(el);
-      }
-      if(total >= 10){
-      total = digital_root(total);
+  public static int digital_root(int n) {
+    int total = 0, i = 0;
+
+      while(n > 0){
+      total += n%10;
+      System.out.println("n: " + n + "\ntotal: " + total);
+      n /= 10;
+    }
+    if(total >= 10){
+        total = digital_root(total);
     }
     return total;
   }
