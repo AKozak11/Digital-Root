@@ -3,13 +3,13 @@ public class DRoot {
   //recursive
 
   public static int digital_root(int n) {
-    int total = 0, i = 0;
+    int total = 0;
 
       while(n > 0){
       total += n%10;
-      System.out.println("n: " + n + "\ntotal: " + total);
       n /= 10;
     }
+
     if(total >= 10){
         total = digital_root(total);
     }
@@ -21,8 +21,8 @@ public class DRoot {
 
 
   public static void main(String args[]){
-    System.out.println(digital_root(59));
-    System.out.println(59%9);
+    System.out.println(digital_root(579));
+    System.out.println(579%9);
 
   }
 }
